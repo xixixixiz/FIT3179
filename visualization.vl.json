@@ -1,36 +1,56 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 500,
-  "height": 300,
   "data": {
-    "url": "data/us-10m.json",
-    "format": {
-      "type": "topojson",
-      "feature": "counties"
-    }
-  },
-  "transform": [
-    {
-      "lookup": "id",
-      "from": {
-        "data": {
-          "url": "data/unemployment.tsv"
-        },
-        "key": "id",
-        "fields": [
-          "rate"
-        ]
+    "values": [
+      {
+        "a": "C",
+        "b": 2
+      },
+      {
+        "a": "C",
+        "b": 7
+      },
+      {
+        "a": "C",
+        "b": 4
+      },
+      {
+        "a": "D",
+        "b": 1
+      },
+      {
+        "a": "D",
+        "b": 2
+      },
+      {
+        "a": "D",
+        "b": 6
+      },
+      {
+        "a": "E",
+        "b": 8
+      },
+      {
+        "a": "E",
+        "b": 4
+      },
+      {
+        "a": "E",
+        "b": 7
       }
-    }
-  ],
-  "projection": {
-    "type": "albersUsa"
+    ]
   },
-  "mark": "geoshape",
+  "mark": "bar",
   "encoding": {
-    "color": {
-      "field": "rate",
-      "type": "quantitative"
+    "y": {
+      "field": "a",
+      "type": "nominal"
+    },
+    "x": {
+      "aggregate": "average",
+      "field": "b",
+      "type": "quantitative",
+      "title": "Mean of B"
     }
   },
   "config": {}
