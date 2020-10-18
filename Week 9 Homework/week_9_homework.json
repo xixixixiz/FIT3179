@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Australia's international migration in 2019",
+  "width": 1000,
+  "height": 600,
   "layer": [
     {
       "data": {
