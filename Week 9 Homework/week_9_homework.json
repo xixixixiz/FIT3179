@@ -25,7 +25,7 @@
               "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/Week%209%20Homework/data/Country_in_2019.csv"
             },
             "key": "Country",
-            "fields": ["Amount"]
+            "fields": ["Amount", "Year"]
           }
         },
         {"filter": {"and": [{"field": "Amount", "gt": -1}]}},
