@@ -37,7 +37,11 @@
           "field": "Log Amount",
           "type": "quantitative",
           "title": "Number of Migration to Australia",
-          "scale": {"type": "log", "scheme": "lighttealblue"}
+          "scale": {
+            "type": "threshold",
+            "domain": [300, 1000, 2000, 3000, 4000, 8000],
+            "scheme": "lighttealblue"
+          }
         },
         "tooltip": [
           {"field": "properties.name", "type": "nominal", "title": "Country"},
@@ -70,11 +74,7 @@
       ],
       "mark": {"type": "geoshape"},
       "encoding": {
-        "color": {
-          "field": "Amount",
-          "type": "quantitative",
-          "scale": {"type": "log", "scheme": "lighttealblue"}
-        },
+        "color": {"value": "gold"},
         "tooltip": [
           {"field": "properties.name", "type": "nominal", "title": "Country"},
           {
