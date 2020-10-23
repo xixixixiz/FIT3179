@@ -35,7 +35,7 @@
         "color": {
           "field": "Log Amount",
           "type": "quantitative",
-          "title": "Number of Migration to Australia",
+          "title": "Number of Migration",
           "scale": {
             "type": "threshold",
             "domain": [300, 1000, 2000, 3000, 4000, 8000],
@@ -113,7 +113,7 @@
         "size": {
           "field": "Amount",
           "scale": {"type": "log"},
-          "title": "Number of Migration to Australia"
+          "legend": null
         },
         "color": {"value": "rgb(220,36,30)"}
       }
