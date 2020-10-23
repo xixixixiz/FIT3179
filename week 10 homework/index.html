@@ -9,11 +9,16 @@
 </head>
 <body>
 
-<div id="vis"></div>
+<div id="vis1"></div>
+<div id="vis2"></div>
 
 <script type="text/javascript">
-  var spec = "https://xixixixiz.github.io/FIT3179/Week%209%20Homework/world_ma[.json";
-  vegaEmbed('#vis', spec).then(function(result) {
+  var spec1 = "https://xixixixiz.github.io/FIT3179/Week%2010%20Homework/world_map.json";
+  vegaEmbed('#vis1', spec1).then(function(result) {
+    //  Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  var spec2 = "https://xixixixiz.github.io/FIT3179/week%2010%20homework/state_line_chart.json";
+  vegaEmbed('#vis2', spec2).then(function(result) {
     //  Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
