@@ -3,6 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/week%2010%20homework/data/Migrate_by_country_new.csv"
   },
+  "background": "rgb(250, 247, 238)",
   "width": "container",
   "height": 250,
   "params": [
