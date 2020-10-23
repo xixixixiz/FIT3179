@@ -77,7 +77,7 @@
       "data": {
         "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/week%2010%20homework/data/Migrate_by_country_new.csv"
       },
-      "width": "container",
+      "width": 400,
       "height": 250,
       "mark": "line",
       "selection": {
@@ -146,7 +146,7 @@
         "text": "Number of migration in different state in year",
         "fontSize": 20
       },
-      "width": "container",
+      "width": 400,
       "height": 250,
       "mark": "line",
       "transform": [
