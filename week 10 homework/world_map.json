@@ -1,0 +1,124 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Australia's international migration in 2019",
+  "width": 1000,
+  "height": 600,
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/Week%209%20Homework/data/world%20map%202.json",
+        "format": {"type": "topojson", "feature": "world map"}
+      },
+      "projection": {"type": "equirectangular"},
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/Week%209%20Homework/data/world%20map%202.json",
+        "format": {"type": "topojson", "feature": "world map"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/Week%209%20Homework/data/Country_in_2019.csv"
+            },
+            "key": "Country",
+            "fields": ["Amount", "Year"]
+          }
+        },
+        {"filter": {"and": [{"field": "Amount", "gt": -1}]}},
+        {"calculate": "datum.Amount + 0.1", "as": "Log Amount"}
+      ],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "Log Amount",
+          "type": "quantitative",
+          "title": "Number of Migration to Australia",
+          "scale": {
+            "type": "threshold",
+            "domain": [300, 1000, 2000, 3000, 4000, 8000],
+            "scheme": "lighttealblue"
+          }
+        },
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Country"},
+          {
+            "field": "Amount",
+            "type": "quantitative",
+            "title": "Total migration"
+          },
+          {"field": "Year", "type": "ordinal"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/Week%209%20Homework/data/world%20map%202.json",
+        "format": {"type": "topojson", "feature": "world map"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/Week%209%20Homework/data/Country_in_2019.csv"
+            },
+            "key": "Country",
+            "fields": ["Amount", "Year", "Country"]
+          }
+        },
+        {"filter": {"and": [{"field": "Country", "equal": "Australia"}]}}
+      ],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {"value": "gold"},
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Country"},
+          {
+            "field": "Amount",
+            "type": "quantitative",
+            "title": "Total Number of Migration to Australia"
+          },
+          {"field": "Year", "type": "ordinal"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/Week%209%20Homework/data/Country_in_2019.csv"
+      },
+      "transform": [
+        {
+          "filter": {
+            "or": [
+              {"field": "Country", "equal": "United States"},
+              {"field": "Country", "equal": "United Kingdom"},
+              {"field": "Country", "equal": "China"},
+              {"field": "Country", "equal": "New Zealand"},
+              {"field": "Country", "equal": "India"},
+              {"field": "Country", "equal": "Brazil"}
+            ]
+          }
+        }
+      ],
+      "projection": {"type": "equirectangular"},
+      "mark": "line",
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "longitude2": {"field": "dest_Longitude"},
+        "latitude2": {"field": "dest_Latitude"},
+        "size": {
+          "field": "Amount",
+          "scale": {"type": "log"},
+          "title": "Number of Migration to Australia"
+        },
+        "color": {"value": "rgb(220,36,30)"}
+      }
+    }
+  ],
+  "config": {}
+}
