@@ -139,8 +139,8 @@
               "title": "Number of migration"
             },
             "opacity": {
-              "condition": {"selection": "country_highlight", "value": 0.8},
-              "value": 0.2
+              "condition": {"selection": "country_highlight", "value": 1},
+              "value": 0.05
             },
             "color": {
               "condition": {
@@ -214,8 +214,8 @@
         },
         "color": {"field": "Country of birth", "type": "nominal"},
         "opacity": {
-          "condition": {"selection": "country_highlight", "value": 0.8},
-          "value": 0.2
+          "condition": {"selection": "country_highlight", "value": 1},
+          "value": 0.05
         },
         "tooltip": [
               {"field": "Country of birth", "type":"nominal", "title": "Country"},
