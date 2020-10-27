@@ -43,7 +43,8 @@
         },
         "x": {
           "field": "NOM arrival",
-          "aggregate": "sum"
+          "aggregate": "sum",
+          "title": "Net overseas migration arrival"
         },
         "tooltip": [
           {
@@ -96,7 +97,8 @@
         "y": {
           "field": "NOM arrival",
           "type": "quantitative",
-          "aggregate": "sum"
+          "aggregate": "sum",
+          "title": "Net overseas migration arrival"
         },
         "color": {
           "condition": {
