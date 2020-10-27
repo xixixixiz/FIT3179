@@ -1,0 +1,165 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/week%2010%20homework/data/Migrate_by_country_new.csv"
+  },
+  "background": "rgb(250, 247, 238)",
+  "width": "container",
+  "height": 250,
+  "params": [
+    {
+      "name": "year_selection",
+      "value": 2019,
+      "bind": {
+        "input": "range",
+        "min": 2005,
+        "max": 2019,
+        "step": 1,
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "Country_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "United States",
+          "United Kingdom",
+          "China",
+          "New Zealand",
+          "Brazil",
+          "Singapore",
+          "Italy",
+          "Philippines",
+          "Nepal",
+          "Canada"
+        ],
+        "labels": [
+          "Show All",
+          "United States",
+          "United Kingdom",
+          "China",
+          "New Zealand",
+          "Brazil",
+          "Singapore",
+          "Italy",
+          "Philippines",
+          "Nepal",
+          "Canada"
+        ],
+        "name": "Country Selection: "
+      }
+    },
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels": [
+          "Show All",
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Year == year_selection"},
+    {"filter": "datum.State !== 'Australia(a)'"},
+    {
+      "filter": {
+        "or": [
+          {"field": "Country of birth", "equal": "United States"},
+          {"field": "Country of birth", "equal": "United Kingdom"},
+          {"field": "Country of birth", "equal": "China"},
+          {"field": "Country of birth", "equal": "New Zealand"},
+          {"field": "Country of birth", "equal": "Brazil"},
+          {"field": "Country of birth", "equal": "Singapore"},
+          {"field": "Country of birth", "equal": "Italy"},
+          {"field": "Country of birth", "equal": "Philippines"},
+          {"field": "Country of birth", "equal": "Nepal"},
+          {"field": "Country of birth", "equal": "Canada"},
+          {"field": "Country of birth", "equal": "Egypt"},
+          {"field": "Country of birth", "equal": "South Africa"},
+          {"field": "Country of birth", "equal": "Colombia"},
+          {"field": "Country of birth", "equal": "India"}
+        ]
+      }
+    },
+    {
+      "filter": "Country_selection == null || datum['Country of birth'] == Country_selection"
+    },
+    {
+      "filter": "Continent_selection == null || datum.Continent == Continent_selection"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "rule", "color": "#ccc"},
+      "encoding": {"detail": {"aggregate": "count"}, "x": {"field": "State"}}
+    },
+    {
+      "selection": {
+        "country_highlight": {
+          "type": "multi",
+          "fields": ["Country of birth"],
+          "bind": "legend"
+        }
+      },
+      "mark": "line",
+      "encoding": {
+        "x": {"field": "State", "type": "nominal"},
+        "y": {
+          "field": "Amount",
+          "type": "quantitative",
+          "scale": {"type": "threshold"}
+        },
+        "color": {
+          "field": "Country of birth",
+          "type": "nominal",
+          "scale": {"scheme": "tableau20"}
+        },
+        "opacity": {
+          "condition": {"selection": "country_highlight", "value": 0.8},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "Country of birth", "type": "nominal"},
+          {"field": "State", "type": "nominal"},
+          {
+            "field": "Amount",
+            "type": "quantitative",
+            "title": "Number of Migration"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "axisX": {
+      "domain": false,
+      "labelAngle": 15,
+      "tickColor": "#ccc",
+      "title": null
+    },
+    "view": {"stroke": null},
+    "style": {
+      "label": {"baseline": "middle", "align": "right", "dx": -5},
+      "tick": {"orient": "horizontal"}
+    }
+  }
+}

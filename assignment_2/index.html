@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- custom style -->
+  <style>
+    *{
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    h1{
+      font-weight: 900;
+      justify-content: center;
+      background: rgb(188, 97, 52);
+      vertical-align: middle;
+      text-align: center;
+    }
+     body{
+       background-color: lightgray;
+     }
+     .page{
+       width: 1200px;    
+       background-color: rgb(250, 247, 238);   
+       margin: auto;
+       padding: 50px;
+       padding-top: 35px;
+       padding-bottom: 5px;
+    }
+    .vis-container{
+      width: 100%;
+    }
+    .description h2, h1{
+      margin-top:0px;
+    }
+    .description-right {
+      padding-left: 20px;
+    }
+    .description-left{
+      padding-right: 20px;
+    }
+    .pure-g{
+      margin-bottom: 25px;
+    }
+    .small-font{
+        font-size: 14px;
+
+    }
+    .title{
+      font-family: Times;
+      font-weight: bolder;
+      font-size: 55px;
+    }
+    .sub-title{
+      font-family: Times;
+      font-weight: bolder;
+      text-align: center;
+      background: rgb(244, 235, 213);
+      font-size: 35px;
+    }
+    .text-font-line-graph{
+      font-family: Arial;
+      font-size: 20px;
+      text-align: center;
+    }
+    .text-font-map{
+      font-family: Arial;
+      font-size: 20px;
+      text-align: center;
+      padding-top: 20px;
+    }
+    .footer{
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+ <div class="page">
+  
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1 class="title">Australia's international migration in 2005 to 2019</h1>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h1 class="sub-title">Australia's international migration in 2019</h1>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-4-5">
+          <div class="description description-left">
+            <div id="vis1" class="vis-container"></div>
+          </div>
+        </div>
+        <div class="pure-u-1-5">
+          <p class="text-font-map">
+            In 2019, <span style="font-weight:900;font-size:25px">257,030</span> people migrate to Australia.
+            <br><span style="font-weight:900;font-size:25px">Indians</span> has the highest proportion of immigrants to Australia, <span style="font-weight:900;font-size:25px">68,840</span> Indians migrate to Australia in 2019.
+            <br><span style="font-weight:900;font-size:25px">Chinese</span> is the second highest proportion of immigrants to AUstrali, <span style="font-weight:900;font-size:25px">29,290</span> Chinese migrate to Australia in 2019.
+          </p>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h1 class="sub-title">The migration trend to Australia for 15 countries from 2005 to 2019</h1>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1-5">
+          <p class="text-font-line-graph">
+            <span style="font-weight:900;font-size:25px">14</span> countries with the most people immigrating to Australia are demonstrated in the map.<br>
+              <span style="font-weight:900;font-size:25px">China</span> and <span style="font-weight:900;font-size:25px">India</span> have the highest number of people migrate to Australia in recent years.<br><br><br><br><br><br><br>
+              <span style="font-weight:900;font-size:25px">Victoria</span> and <span style="font-weight:900;font-size:25px">New South Wales</span> are the states with the most immigrants in recent years.<br>
+            <span style="font-weight:900;font-size:25px">Asian</span> has the highest proportion of immigrats to Australia.
+          </p>
+        </div>
+        <div class="pure-u-4-5">
+          <div class="description description-right">
+            <div id="vis2"  class="vis-container"></div>
+          </div>
+        </div>
+      
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+
+    <!-- end pure grid group -->
+
+    <div class="pure-g">
+
+    </div>
+  
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font footer">
+        <footer>This visualisation is created by <a href="https://github.com/xixixixiz" target="_blank">Xi Zhang</a>. The datasource is <a href="https://www.abs.gov.au/statistics/people/population/migration-australia/2018-19#data-download" target="_blank">Australian Bureau of Statistics</a>.</footer>
+      </div>
+    </div>
+  
+
+  </div> <!-- end page -->
+
+<script type="text/javascript">
+  var spec1 = "https://xixixixiz.github.io/FIT3179/week%2010%20homework/world_map.json";
+  var spec = "https://xixixixiz.github.io/FIT3179/week%2010%20homework/state_line_chart.json";
+  var spec2 = "https://xixixixiz.github.io/FIT3179/week%2010%20homework/interaction_graph.json"
+  vegaEmbed('#vis1', spec1, {"actions": false}).then(function(result) {
+    //  Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis2', spec2, {"actions": false}).then(function(result) {
+    //  Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+</html>
