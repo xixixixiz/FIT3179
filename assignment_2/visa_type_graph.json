@@ -16,7 +16,7 @@
   ],
   "hconcat": [
         {
-      "width": 250,
+      "width": 230,
       "height": 250,
       "data": {
         "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/assignment_2/data/Different_Visa_type_in_state.csv"
@@ -67,7 +67,7 @@
       }
     },
     {
-      "width": 250,
+      "width": 230,
       "height": 250,
       "data": {
         "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/assignment_2/data/Different_Visa_type_in_state.csv"
