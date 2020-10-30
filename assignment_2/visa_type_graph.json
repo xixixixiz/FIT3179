@@ -44,7 +44,10 @@
         "x": {
           "field": "NOM arrival",
           "aggregate": "sum",
-          "title": "Net overseas migration arrival"
+          "title": "Net overseas migration arrival",
+          "scale": {
+            "domain": [0, 105000]
+          }
         },
         "tooltip": [
           {
