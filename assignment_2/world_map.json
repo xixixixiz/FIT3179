@@ -39,7 +39,7 @@
           "title": "Number of Migration",
           "scale": {
             "type": "threshold",
-            "domain": [300, 1000, 2000, 3000, 4000, 8000],
+            "domain": [300, 2000, 4000, 6000],
             "scheme": "lighttealblue"
           }
         },
