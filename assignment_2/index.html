@@ -11,27 +11,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- custom style -->
   <style>
-    *{
-      font-family: 'Source Sans Pro', sans-serif;
-    }
+    
+    body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     h1{
       font-weight: 900;
       justify-content: center;
-      background: rgb(188, 97, 52);
       vertical-align: middle;
       text-align: center;
     }
-     body{
-       background-color: lightgray;
-     }
+    body{
+      background-color: rgb(235, 235, 235)
+    }
      .page{
        width: 1200px;    
-       background-color: rgb(250, 247, 238);   
        margin: auto;
        padding: 50px;
        padding-top: 35px;
@@ -57,30 +56,29 @@
 
     }
     .title{
-      font-family: Times;
+      font-family: 'Merriweather', serif;
       font-weight: bolder;
-      font-size: 55px;
+      font-size: 50px;
     }
     .sub-title{
-      font-family: Times;
+      font-family: 'Merriweather', serif;
       font-weight: bolder;
       text-align: center;
-      background: rgb(244, 235, 213);
       font-size: 35px;
     }
     .text-font-line-graph{
-      font-family: Arial;
+
       font-size: 20px;
       text-align: center;
     }
     .text-font-map{
-      font-family: Arial;
+
       font-size: 20px;
       text-align: center;
-      padding-top: 20px;
+      width: 95%;
     }
     .text-font-visa{
-      font-family: Arial;
+
       font-size: 20px;
       text-align: center;
     }
@@ -90,6 +88,21 @@
       width: 100%;
       text-align: center;
     }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.);
+      transition: 0.3s;
+      width: 100%;
+      background-color: rgb(250,250,250)
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+    }
+    .center-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 </head>
 <body>
@@ -98,6 +111,7 @@
   
    <!-- pure grid group -->
     <div class="pure-g">
+      <img class="center-image" src="australia-1296727_640.png" width="320" height="264">
       <div class="pure-u-1-1">
         <h1 class="title">Australia's international migration in 2005 to 2019</h1>
       </div>
@@ -105,73 +119,88 @@
   <!-- end pure grid group -->
 
     <!-- pure grid group -->
-    
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-          <h1 class="sub-title">Australia's international migration in 2019</h1>
-        </div>
-    </div>
-
-    <div class="pure-g">
-        <div class="pure-u-4-5">
-          <div class="description description-left">
-            <div id="vis1" class="vis-container"></div>
+    <div class="card">
+      <br>
+      <div class="pure-g">
+          <div class="pure-u-1-1">
+            <h1 class="sub-title">Australia's international migration in 2019</h1>
           </div>
-        </div>
-        <div class="pure-u-1-5">
-          <p class="text-font-map">
-            In 2019, <span style="font-weight:900;font-size:25px">257,030</span> people migrate to Australia.
-            <br><span style="font-weight:900;font-size:25px">Indians</span> has the highest proportion of immigrants to Australia, <span style="font-weight:900;font-size:25px">68,840</span> Indians migrate to Australia in 2019.
-            <br><span style="font-weight:900;font-size:25px">Chinese</span> is the second highest proportion of immigrants to AUstrali, <span style="font-weight:900;font-size:25px">29,290</span> Chinese migrate to Australia in 2019.
-          </p>
-        </div>
+      </div>
+
+      <div class="pure-g">
+          <div class="pure-u-4-5">
+            <div class="description description-left">
+              <div id="vis1" class="vis-container"></div>
+            </div>
+          </div>
+          <div class="pure-u-1-5">
+            <p class="text-font-map">
+              In 2019, <span style="font-weight:900">257,030</span> people migrate to Australia.
+              <br><span style="font-weight:900">Indians</span> has the highest proportion of immigrants to Australia, <span style="font-weight:900">68,840</span> Indians migrate to Australia in 2019.
+              <br><span style="font-weight:900">Chinese</span> is the second highest proportion of immigrants to AUstrali, <span style="font-weight:900">29,290</span> Chinese migrate to Australia in 2019.
+            </p>
+          </div>
+      </div>
+      <!-- end pure grid group -->
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <!-- pure grid group -->
+    <div class="card">
+    <br>
+      <div class="pure-g">
+          <div class="pure-u-1-1">
+            <h1 class="sub-title">The migration trend to Australia for 15 countries from 2005 to 2019</h1>
+          </div>
+      </div>
+
+      <div class="pure-g">
+          <div class="pure-u-1-5">
+            <p class="text-font-line-graph">
+              <span style="font-weight:900">14</span> countries with the most people immigrating to Australia are demonstrated in the map.<br>
+                <span style="font-weight:900">China</span> and <span style="font-weight:900">India</span> have the highest number of people migrate to Australia in recent years.<br><br><br><br><br><br><br>
+                <span style="font-weight:900">Victoria</span> and <span style="font-weight:900">New South Wales</span> are the states with the most immigrants in recent years.<br>
+              <span style="font-weight:900">Asian</span> has the highest proportion of immigrats to Australia.
+            </p>
+          </div>
+          <div class="pure-u-4-5">
+            <div class="description description-right">
+              <div id="vis2"  class="vis-container"></div>
+            </div>
+          </div>
+        
+      </div>
     </div>
     <!-- end pure grid group -->
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-          <h1 class="sub-title">The migration trend to Australia for 15 countries from 2005 to 2019</h1>
-        </div>
-    </div>
-
-    <div class="pure-g">
-        <div class="pure-u-1-5">
-          <p class="text-font-line-graph">
-            <span style="font-weight:900;font-size:25px">14</span> countries with the most people immigrating to Australia are demonstrated in the map.<br>
-              <span style="font-weight:900;font-size:25px">China</span> and <span style="font-weight:900;font-size:25px">India</span> have the highest number of people migrate to Australia in recent years.<br><br><br><br><br><br><br>
-              <span style="font-weight:900;font-size:25px">Victoria</span> and <span style="font-weight:900;font-size:25px">New South Wales</span> are the states with the most immigrants in recent years.<br>
-            <span style="font-weight:900;font-size:25px">Asian</span> has the highest proportion of immigrats to Australia.
-          </p>
-        </div>
-        <div class="pure-u-4-5">
-          <div class="description description-right">
-            <div id="vis2"  class="vis-container"></div>
-          </div>
-        </div>
-      
-    </div>
-    <!-- end pure grid group -->
+    <br>
+    <br>
+    <br>
 
     <!-- pure grid group -->
-    <div class="pure-g">
-    <div class="pure-u-1-1">
-      <h1 class="sub-title">Australia net overseas migration visa type from 2005 to 2019</h1>
-    </div>
-    </div>
+    <div class="card">
+    <br>
+      <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1 class="sub-title">Australia net overseas migration visa type from 2005 to 2019</h1>
+      </div>
+      </div>
 
-    <div class="pure-g">
-        <div class="pure-u-4-5">
-          <div class="description description-left">
-            <div id="vis3" class="vis-container"></div>
+      <div class="pure-g">
+          <div class="pure-u-4-5">
+            <div class="description description-left">
+              <div id="vis3" class="vis-container"></div>
+            </div>
           </div>
-        </div>
-        <div class="pure-u-1-5">
-          <p class="text-font-visa">
-            <span style="font-weight:900;font-size:25px">Temporary type visa</span> takes the largest proportion of migration in Australia<br>
-            <span style="font-weight:900;font-size:25px">Getting education</span>, <span style="font-weight:900;font-size:25px">becoming an Australian citizen</span> and <span style="font-weight:900;font-size:25px">traveling</span> are the top 3 reasons people migrate to Australia
-          </p>
-        </div>
+          <div class="pure-u-1-5">
+            <p class="text-font-visa">
+              <span style="font-weight:900">Temporary type visa</span> takes the largest proportion of migration in Australia<br>
+              <span style="font-weight:900">Getting education</span>, <span style="font-weight:900">becoming an Australian citizen</span> and <span style="font-weight:900">traveling</span> are the top 3 reasons people migrate to Australia
+            </p>
+          </div>
+      </div>
     </div>
     <!-- end pure grid group -->
 
