@@ -16,7 +16,7 @@
   ],
   "hconcat": [
         {
-      "width": 250,
+      "width": 230,
       "height": 250,
       "data": {
         "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/assignment_2/data/Different_Visa_type_in_state.csv"
@@ -43,7 +43,11 @@
         },
         "x": {
           "field": "NOM arrival",
-          "aggregate": "sum"
+          "aggregate": "sum",
+          "title": "Net overseas migration arrival",
+          "scale": {
+            "domain": [0, 105000]
+          }
         },
         "tooltip": [
           {
@@ -67,7 +71,7 @@
       }
     },
     {
-      "width": 250,
+      "width": 230,
       "height": 250,
       "data": {
         "url": "https://raw.githubusercontent.com/xixixixiz/FIT3179/master/assignment_2/data/Different_Visa_type_in_state.csv"
@@ -96,7 +100,8 @@
         "y": {
           "field": "NOM arrival",
           "type": "quantitative",
-          "aggregate": "sum"
+          "aggregate": "sum",
+          "title": "Net overseas migration arrival"
         },
         "color": {
           "condition": {

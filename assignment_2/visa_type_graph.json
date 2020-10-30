@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "background": "rgb(250, 247, 238)",
   "params": [
     {
       "name": "year_selection",
@@ -44,7 +43,10 @@
         "x": {
           "field": "NOM arrival",
           "aggregate": "sum",
-          "title": "Net overseas migration arrival"
+          "title": "Net overseas migration arrival",
+          "scale": {
+            "domain": [0, 105000]
+          }
         },
         "tooltip": [
           {
